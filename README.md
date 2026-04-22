@@ -1,16 +1,194 @@
-# React + Vite
+# 📝 Todo List em React — Hooks Avançados, Context API e Performance
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido com **React + Vite** com foco em **boas práticas modernas**, organização de código, reuso de lógica e otimização de performance.
 
-Currently, two official plugins are available:
+Este repositório faz parte de um exercício prático para consolidar conceitos avançados de React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 Objetivo do Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Desenvolver uma aplicação de **Lista de Tarefas (Todo List)** utilizando:
 
-## Expanding the ESLint configuration
+* Hooks nativos do React
+* Context API para estado global
+* Hooks customizados
+* Memoization para performance
+* Persistência de dados no navegador
+* HTML semântico, acessível e responsivo (Mobile First)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Funcionalidades
+
+* ➕ Adicionar novas tarefas
+* ✅ Marcar tarefas como concluídas
+* ❌ Remover tarefas
+* 🔍 Filtrar tarefas:
+
+  * Todas
+  * Pendentes
+  * Concluídas
+* 💾 Persistência com `localStorage`
+
+---
+
+## 🧠 Conceitos Aplicados
+
+### Hooks
+
+* `useState` — controle de estado local
+* `useEffect` — sincronização com `localStorage`
+* `useContext` — acesso ao estado global
+* `useMemo` — otimização de filtros
+
+### Context API
+
+* Centralização do estado da aplicação
+* Evita *prop drilling*
+
+### Hook Customizado
+
+* Encapsula a lógica de persistência no `localStorage`
+
+### Memoization
+
+* `React.memo` aplicado em itens da lista
+* Evita renderizações desnecessárias
+
+---
+
+## 🧱 Arquitetura de Componentes
+
+```
+src/
+ ├── App.jsx
+ ├── TodoContext.jsx
+ ├── TodoForm.jsx
+ ├── TodoFilters.jsx
+ ├── TodoList.jsx
+ ├── TodoItem.jsx
+ ├── useLocalStorage.js
+ ├── main.jsx
+ └── styles.css
+```
+
+### Descrição dos Componentes
+
+* **TodoProvider** → Gerencia o estado global das tarefas
+* **TodoForm** → Criação de novas tarefas
+* **TodoFilters** → Filtros de visualização
+* **TodoList** → Renderização da lista
+* **TodoItem** → Item individual (memoizado)
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* React 18
+* Vite
+* JavaScript (ES6+)
+* CSS (Mobile First)
+* React Developer Tools
+
+---
+
+## 📦 Instalação e Execução
+
+### Pré-requisitos
+
+* Node.js (versão LTS)
+* npm ou yarn
+
+### Passos
+
+```bash
+# Clone o repositório
+git clone https://github.com/Li-code1/todo-react-avancado.git
+
+# Acesse o projeto
+cd todo-react
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+```
+
+A aplicação estará disponível em:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🧪 Testes Manuais
+
+### Funcionais
+
+* Adicionar tarefas
+* Concluir tarefas
+* Remover tarefas
+* Filtrar tarefas
+
+### Persistência
+
+* Recarregar a página
+* Verificar manutenção das tarefas
+
+### Performance
+
+* Monitorar renderizações com `console.log`
+* Validar uso de `useMemo` e `React.memo`
+
+---
+
+## 🔍 Ferramentas de Apoio
+
+* **React Developer Tools**
+
+  * Inspeção de hooks
+  * Visualização do Context API
+
+* **DevTools do Navegador**
+
+  * Testes de responsividade
+  * Inspeção do `localStorage`
+
+---
+
+## ♿ Acessibilidade
+
+* Uso de HTML semântico
+* Labels associados aos inputs
+* Navegação via teclado
+* Atributos `aria-*` aplicados
+
+---
+
+## 📱 Responsividade
+
+* Abordagem **Mobile First**
+* Layout funcional em dispositivos móveis e desktop
+
+---
+
+## 📌 Possíveis Evoluções
+
+* Versionar com TypeScript
+* Integração com backend
+* Testes automatizados (Jest / Testing Library)
+* Animações com Framer Motion
+* Autenticação de usuário
+
+---
+
+## 👩‍💻 Autoria
+
+Projeto desenvolvido para fins educacionais e prática avançada em React.
+
+---
+
+⭐ Se este projeto te ajudou, considere deixar uma estrela no repositório!
